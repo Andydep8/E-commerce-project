@@ -24,6 +24,11 @@ db.on("disconnected", () => {
 
 export default function init() {
     let uri = config.database.HOST === "localhost" ? "mongodb" : "mongodb+srv"
+  
+    uri +=
+    database.USER && database.PASSWORD
+    ? `://${database.USER}:${database.PASSWORD}@`
+      : '://';
 
     uri+=
     config.database.HOST === "localhost"

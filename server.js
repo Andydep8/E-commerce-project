@@ -1,5 +1,5 @@
 import http from 'http';
-
+import database from "./api/config/database.js"
 import api from '../E-commerce project/api/api.js';
 
 const port = process.env.PORT || 3000;
@@ -9,7 +9,7 @@ server.on('listening', onListening);
 server.on('error', onError);
 
 server.listen(port);
-
+database();
 
 function onError() {
   switch (error.code) {
