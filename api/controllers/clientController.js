@@ -1,4 +1,4 @@
-import clientSchema from "../models/clientModel.js";
+import {clientSchema} from "../models/index.js";
 
 export const deleteClient = async (req, res) => {
     const {id} = req.params;

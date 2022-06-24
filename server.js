@@ -1,6 +1,6 @@
 import http from 'http';
 import database from "./api/config/database.js"
-import api from '../E-commerce project/api/api.js';
+import api from './api/api.js';
 
 const port = process.env.PORT || 3000;
 const server = http.createServer(api);

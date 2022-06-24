@@ -1,4 +1,4 @@
-import adminSchema from "../models/adminModel.js";
+import {adminSchema} from "../models/index.js";
 
 export const deleteAdmin = async (req, res) => {
     const {id} = req.params;

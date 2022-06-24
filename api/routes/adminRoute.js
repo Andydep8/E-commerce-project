@@ -5,7 +5,7 @@ import {adminController} from "../controllers/index.js"
 const router = express.Router();
 
 router.post("/register/admin", adminController.createAdmin);
-router.put("/admins/:id", );
-router.delete("admins/id");
+router.put("/admins/:id", adminController.updateAdmin);
+router.delete("admins/id", adminController.deleteAdmin);
 
 export default router;

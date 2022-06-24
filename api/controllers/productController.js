@@ -1,4 +1,4 @@
-import productSchema from "../models/productModel.js";
+import {productSchema} from "../models/index.js";
 
 export const deleteProduct = async (req, res) => {
     const {id} = req.params;
@@ -46,6 +46,22 @@ export const createProduct = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             msg: "Error al crear producto"
+        });
+    }
+};
+
+export const getProduct = async (req, res) => {
+    
+
+    try{
+        const product = await productSchema.find();
+        res.status(200).json({
+            msg:"Producto/s encontrado",
+            product,
+        });
+    } catch (error) {
+        return res.status(400).json({
+            msg: "Error al obtener todos los producto/s"
         });
     }
 };
